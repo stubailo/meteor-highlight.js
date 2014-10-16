@@ -1,7 +1,8 @@
 Package.describe({
   summary: "Code highlighting integrated with the markdown package",
   version: "1.0.2",
-  name: "simple:highlight.js"
+  name: "simple:highlight.js",
+  git: "https://github.com/stubailo/meteor-highlight.js"
 });
 
 Npm.depends({
