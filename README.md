@@ -5,6 +5,7 @@ simple:highlight.js
 
 ```
 $ meteor add simple:highlight.js
+```
 
 ### Using standalone
 
