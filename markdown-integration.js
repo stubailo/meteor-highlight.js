@@ -1,19 +1,23 @@
 if (Package.markdown) {
-  var decodeEntitiesAndHighlight;
+  var decode;
 
   if (Meteor.isClient) {
-    decodeEntitiesAndHighlight = function (codeWithEntities) {
-      var decoded = $('<div/>').html(codeWithEntities).text();
-      return hljs.highlightAuto(decoded);
+    decode = function (codeWithEntities) {
+      return $('<div/>').html(codeWithEntities).text();
     };
   } else {
     var entities = Npm.require("html-entities").XmlEntities;
     entities = new entities();
-    decodeEntitiesAndHighlight = function (codeWithEntities) {
-      var decoded = entities.decode(codeWithEntities);
-      return hljs.highlightAuto(decoded);
-    };
+    decode = entities.decode;
   }
+
+  var decodeEntitiesAndHighlight = function (codeWithEntities, lang) {
+    if (lang) {
+      return hljs.highlight(lang, decode(codeWithEntities));
+    } else {
+      return hljs.highlightAuto(decode(codeWithEntities));
+    }
+  };
 
   var oldConstructor = Package.markdown.Showdown.converter;
 
@@ -24,8 +28,8 @@ if (Package.markdown) {
     converter.makeHtml = function (text) {
       text = oldMakeHtml(text);
 
-      text = text.replace(/<pre><code>([\s\S]*?)<\/code><\/pre>/g, function (fullBlock, codeOnly) {
-        var result = decodeEntitiesAndHighlight(codeOnly);
+      text = text.replace(/<pre>\s*<code( class="(.+?)")?>([\s\S]*?)<\/code>\s*<\/pre>/g, function (fullBlock, attr, className, codeOnly) {
+        var result = decodeEntitiesAndHighlight(codeOnly, className);
         return "<pre><code class='hljs " + result.language + "'>" + result.value + "</code></pre>";
       });
 

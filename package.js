@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Code highlighting integrated with the markdown package",
-  version: "1.0.0",
+  version: "1.0.2",
   name: "simple:highlight.js"
 });
 
