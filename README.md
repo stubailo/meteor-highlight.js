@@ -1,7 +1,10 @@
-meteor-highlight.js
+simple:highlight.js
 ===================
 
 > a highlight.js package for Meteor that's integrated with the core markdown package.
+
+```
+$ meteor add simple:highlight.js
 
 ### Using standalone
 
