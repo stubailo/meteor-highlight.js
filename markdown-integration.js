@@ -30,7 +30,7 @@ if (Package.markdown) {
 
       text = text.replace(/<pre>\s*<code( class="(.+?)")?>([\s\S]*?)<\/code>\s*<\/pre>/g, function (fullBlock, attr, className, codeOnly) {
         // Don't re-highlight already highlighted code
-        if (className.match(/hljs/)) {
+        if (className && className.match(/hljs/)) {
           return fullBlock;
         }
 

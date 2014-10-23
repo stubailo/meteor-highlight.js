@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Code highlighting integrated with the markdown package",
-  version: "1.0.4",
+  version: "1.0.5",
   name: "simple:highlight.js",
   git: "https://github.com/stubailo/meteor-highlight.js"
 });
