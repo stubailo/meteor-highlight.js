@@ -1,4 +1,4 @@
-if (Package.markdown) {
+if (Package.markdown && ! isIE8) {
   var decode;
 
   if (Meteor.isClient) {

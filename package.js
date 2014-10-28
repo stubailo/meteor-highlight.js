@@ -10,6 +10,7 @@ Npm.depends({
 });
 
 Package.onUse(function (api) {
+  api.addFiles("detect-ie8.js");
   api.addFiles("highlight.pack.js");
   api.addFiles("markdown-integration.js");
   api.addFiles("github.css");
