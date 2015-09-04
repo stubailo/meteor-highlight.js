@@ -1,4 +1,7 @@
-if (Package.markdown && ! isIE8) {
+if(isIE8)
+  return;
+
+if (Package.markdown) {
   var decode;
 
   if (Meteor.isClient) {
@@ -43,4 +46,19 @@ if (Package.markdown && ! isIE8) {
 
     return converter;
   };
+} else if (Package["chuangbo:marked"]) {
+  var marked = Package['chuangbo:marked'].marked;
+  marked.setOptions({
+    highlight: function(code, lang) {
+      if (lang) {
+        try {
+          return hljs.highlight(lang, code).value;
+        } catch (error) {
+          return hljs.highlightAuto(code).value;
+        }
+      } else {
+        return hljs.highlightAuto(code).value;
+      }
+    }
+  });
 }
