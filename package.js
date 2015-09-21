@@ -14,6 +14,9 @@ Package.onUse(function (api) {
   api.addFiles("highlight.pack.js");
   api.addFiles("markdown-integration.js");
   api.addFiles("github.css");
-  api.use("markdown@1.0.2", ["client", "server"], {weak: true});
+  api.use([
+    "chuangbo:marked@0.3.5_1",
+    "markdown@1.0.2"
+  ], ["client", "server"], {weak: true});
   api.export("hljs");
 });
