@@ -11,7 +11,7 @@ $ meteor add simple:highlight.js
 
 Call the methods as described in the Highlight.js docs: <http://highlightjs.readthedocs.org/en/latest/api.html>.
 
-### Using with the Meteor markdown package or changbo:marked
+### Using with the Meteor markdown package or chuangbo:marked
 
 This package is completely integrated with two markdown packages on the client and the server. Just put a code block in your markdown code:
 
