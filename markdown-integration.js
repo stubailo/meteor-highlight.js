@@ -16,7 +16,11 @@ if (Package.markdown) {
 
   var decodeEntitiesAndHighlight = function (codeWithEntities, lang) {
     if (lang) {
-      return hljs.highlight(lang, decode(codeWithEntities));
+      try {
+        return hljs.highlight(lang, decode(codeWithEntities));
+      } catch (error) {
+        return decode(codeWithEntities);
+      }
     } else {
       return hljs.highlightAuto(decode(codeWithEntities));
     }
@@ -54,7 +58,7 @@ if (Package.markdown) {
         try {
           return hljs.highlight(lang, code).value;
         } catch (error) {
-          return hljs.highlightAuto(code).value;
+          return code;
         }
       } else {
         return hljs.highlightAuto(code).value;
