@@ -1,7 +1,14 @@
 {
   "dependencies": {
+    "highlight.js": {
+      "version": "9.4.0",
+      "resolved": "https://registry.npmjs.org/highlight.js/-/highlight.js-9.4.0.tgz",
+      "from": "highlight.js@9.4.0"
+    },
     "html-entities": {
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/html-entities/-/html-entities-1.1.1.tgz",
+      "from": "html-entities@1.1.1"
     }
   }
 }
