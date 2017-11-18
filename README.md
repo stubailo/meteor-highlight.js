@@ -7,6 +7,12 @@ A highlight.js package for Meteor that's integrated with the core `markdown` pac
 $ meteor add simple:highlight.js
 ```
 
+### In Meteor 1.3+, use npm
+
+In Meteor 1.3 and above, you can and should simply use the `highlight.js` package from npm directly! This Meteor-specific version is no longer maintained.
+
+-------
+
 ### Using standalone
 
 Call the methods as described in the Highlight.js docs: <http://highlightjs.readthedocs.org/en/latest/api.html>.
